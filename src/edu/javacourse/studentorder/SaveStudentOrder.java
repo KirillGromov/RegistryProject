@@ -9,7 +9,7 @@ public class SaveStudentOrder {
 
     public static void main(String[] args) {
 
-        buildStudentOrder();
+
 
 //        StudentOrder so = new StudentOrder();
 //        long ans = saveStudentOrder(so);
@@ -24,21 +24,10 @@ public class SaveStudentOrder {
         return answer;
     }
 
-     public static StudentOrder buildStudentOrder(){
+     public static StudentOrder buildStudentOrder(long id){
         StudentOrder so = new StudentOrder();
+        so.setStudentOrderId(id);
 
-
-
-        Adult husband = new Adult();
-        System.out.println("Check");
-
-//        husband.setGivenName("Андрей");
-//        husband.setSurName("Петров");
-//        husband.setPassportNumber("123456");
-//        so.setHasband(husband);
-
-//        String ans = husband.getPersonString();
-//        System.out.println(ans);
 
         return so;
     }

@@ -11,7 +11,7 @@ public class CityRegisterValidator
     String password;
 
     public AnswerCityRegister checkCityRegister(StudentOrder so){
-        System.out.println("CityRegister is running" + hostName + ", " + login + ", " + password);
+        System.out.println("CityRegister is running: " + hostName + ", " + login + ", " + password);
         AnswerCityRegister ans =  new AnswerCityRegister();
         ans.sucess = false;
         return ans;
