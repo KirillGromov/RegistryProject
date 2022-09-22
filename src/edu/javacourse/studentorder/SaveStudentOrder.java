@@ -30,7 +30,7 @@ public class SaveStudentOrder {
 
 
         Adult husband = new Adult();
-        //Person p = new Person();
+        System.out.println("Check");
 
 //        husband.setGivenName("Андрей");
 //        husband.setSurName("Петров");
