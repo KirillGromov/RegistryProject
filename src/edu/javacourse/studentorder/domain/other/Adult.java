@@ -2,6 +2,8 @@ package edu.javacourse.studentorder.domain.other;
 
 import edu.javacourse.studentorder.domain.Person;
 
+import java.time.LocalDate;
+
 public class Adult extends Person
 {
     private String passportSeria;
@@ -12,13 +14,12 @@ public class Adult extends Person
     private String studentId;
 
     public Adult(){
-        System.out.println("Adult is created");
+
     }
 
-    public String getPersonString(){
-        return surName + " " + givenName + " " + passportNumber;
+    public Adult(String surName, String givenName, String patronymic, LocalDate dateBirth) {
+        super(surName, givenName, patronymic, dateBirth);
     }
-
 
 
     public String getUnivesity() {
@@ -68,4 +69,6 @@ public class Adult extends Person
     public void setIssueDepartment(String issueDepartment) {
         this.issueDepartment = issueDepartment;
     }
+
+
 }
