@@ -1,4 +1,4 @@
-package edu.javacourse.studentorder.domain.other;
+package edu.javacourse.studentorder.domain;
 
 import edu.javacourse.studentorder.domain.Person;
 
@@ -8,7 +8,7 @@ public class Adult extends Person
 {
     private String passportSeria;
     private String passportNumber;
-    private String issueDate;
+    private LocalDate issueDate;
     private String issueDepartment;
     private String univesity;
     private String studentId;
@@ -54,11 +54,11 @@ public class Adult extends Person
         this.passportNumber = passportNumber;
     }
 
-    public String getIssueDate() {
+    public LocalDate getIssueDate() {
         return issueDate;
     }
 
-    public void setIssueDate(String issueDate) {
+    public void setIssueDate(LocalDate issueDate) {
         this.issueDate = issueDate;
     }
 
