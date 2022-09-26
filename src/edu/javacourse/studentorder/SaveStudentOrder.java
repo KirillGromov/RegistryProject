@@ -36,7 +36,7 @@ public class SaveStudentOrder {
 
 
         Address address = new Address("195000", "Заневский пр.", "12", "", "142");
-
+        //Муж
         Adult husband = new Adult("Петров", "Виктор", "Сергеевич", LocalDate.of(1997, 8, 24));
         husband.setPassportSeria("" + (1000 + id));
         husband.setPassportNumber("" + (100000 + id));
@@ -44,7 +44,7 @@ public class SaveStudentOrder {
         husband.setIssueDepartment("Отдел полиции №" + id);
         husband.setStudentId("" + (100000 + id));
         husband.setAddress(address);
-
+        //Жена
         Adult wife = new Adult("Петров", "Виктор", "Сергеевич", LocalDate.of(1997, 8, 24));
         wife.setPassportSeria("" + (2000 + id));
         wife.setPassportNumber("" + (200000 + id));
@@ -52,16 +52,23 @@ public class SaveStudentOrder {
         wife.setIssueDepartment("Отдел полиции №" + id);
         wife.setStudentId("" + (200000 + id));
         wife.setAddress(address);
-
-        Child child = new Child("Петрова", "Ирина", "Викторовна", LocalDate.of(2018, 6, 29));
-        child.setCertificateNumber("" + (300000 + id));
-        child.setIssueDate(LocalDate.of(2018, 7, 19));
-        child.setIssueDepartment("Отдел ЗАГС №" + id);
-        child.setAddress(address);
+        //Ребёнок
+        Child child1 = new Child("Петрова", "Ирина", "Викторовна", LocalDate.of(2018, 6, 29));
+        child1.setCertificateNumber("" + (300000 + id));
+        child1.setIssueDate(LocalDate.of(2018, 7, 19));
+        child1.setIssueDepartment("Отдел ЗАГС №" + id);
+        child1.setAddress(address);
+         //Ребёнок
+         Child child2 = new Child("Петров", "Евгений", "Викторович", LocalDate.of(2018, 6, 29));
+         child2.setCertificateNumber("" + (400000 + id));
+         child2.setIssueDate(LocalDate.of(2018, 7, 19));
+         child2.setIssueDepartment("Отдел ЗАГС №" + id);
+         child2.setAddress(address);
 
         so.setHasband(husband);
         so.setWife(wife);
-        so.setChild(child);
+        so.addChild(child1);
+        so.addChild(child2);
 
         return so;
     }
