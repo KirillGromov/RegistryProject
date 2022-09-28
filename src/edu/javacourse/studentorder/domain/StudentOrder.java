@@ -64,7 +64,7 @@ public class StudentOrder
     }
 
     public void addChild(Child child){
-        if(child == null){
+        if(children == null){
             children = new ArrayList<>(5);
         }
         children.add(child);
