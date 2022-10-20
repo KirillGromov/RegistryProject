@@ -1,19 +1,24 @@
 package edu.javacourse.studentorder;
 
-import edu.javacourse.studentorder.domain.Address;
-import edu.javacourse.studentorder.domain.Child;
-import edu.javacourse.studentorder.domain.Adult;
-import edu.javacourse.studentorder.domain.StudentOrder;
+import edu.javacourse.studentorder.domain.*;
+import org.postgresql.Driver;
 
+import javax.xml.transform.Result;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalDate;
 
 public class SaveStudentOrder {
 
 
-    public static void main(String[] args) {
-        StudentOrder s = buildStudentOrder(10);
+    public static void main(String[] args) throws Exception {
 
 
+
+
+//        StudentOrder s = buildStudentOrder(10);
 //        StudentOrder so = new StudentOrder();
 //        long ans = saveStudentOrder(so);
 //        System.out.println(ans);
@@ -34,8 +39,9 @@ public class SaveStudentOrder {
         so.setMarriageDate(LocalDate.of(2016, 7, 4));
         so.setMarriageOffice("Отдел ЗАГС");
 
+        Street street = new Street(1L, "Street First");
 
-        Address address = new Address("195000", "Заневский пр.", "12", "", "142");
+        Address address = new Address(street, "Заневский пр.", "12", "", "142");
         //Муж
         Adult husband = new Adult("Петров", "Виктор", "Сергеевич", LocalDate.of(1997, 8, 24));
         husband.setPassportSeria("" + (1000 + id));
