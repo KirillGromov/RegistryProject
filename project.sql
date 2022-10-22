@@ -40,33 +40,35 @@ create table jc_register_office
 create table jc_student_order
 (
     student_order_id serial,
+    student_order_status int not null,
+    student_order_date timestamp not null,
     h_sur_name varchar(100) not null,
     h_given_name varchar(100) not null,
     h_patronymic varchar(100) not null,
     h_date_of_birth date not null,
-    h_passport_seria varchar(10) not null,
-    h_passport_number varchar(10) not null,
+    h_passport_seria varchar(50) not null,
+    h_passport_number varchar(50) not null,
     h_passport_date date not null,
     h_passport_office_id integer not null,
-    h_post_index varchar(10),
+    h_post_index varchar(50),
     h_street_code integer not null,
-    h_building varchar(10) not null,
-    h_extension varchar(10),
-    h_apartment varchar(10),
+    h_building varchar(50) not null,
+    h_extension varchar(50),
+    h_apartment varchar(50),
     w_sur_name varchar(100) not null,
     w_given_name varchar(100) not null,
     w_patronymic varchar(100) not null,
     w_date_of_birth date not null,
-    w_passport_seria varchar(10) not null,
-    w_passport_number varchar(10) not null,
+    w_passport_seria varchar(50) not null,
+    w_passport_number varchar(50) not null,
     w_passport_date date not null,
     w_passport_office_id integer not null,
-    w_post_index varchar(10),
+    w_post_index varchar(50),
     w_street_code integer not null,
-    w_building varchar(10) not null,
-    w_extension varchar(10),
-    w_apartment varchar(10),
-    certificate_id varchar(20) not null,
+    w_building varchar(50) not null,
+    w_extension varchar(50),
+    w_apartment varchar(50),
+    certificate_id varchar(50) not null,
     register_office_id integer not null,
     marriage_date date not null,
     primary key (student_order_id),
@@ -74,7 +76,7 @@ create table jc_student_order
     foreign key (w_street_code) references jc_street(street_code) on delete restrict,
 	foreign key (register_office_id) references jc_register_office(r_office_id) on delete restrict
 
-)
+);
 
 create table jc_student_child
 (
@@ -84,16 +86,18 @@ create table jc_student_child
     c_given_name varchar(100) not null,
     c_patronymic varchar(100) not null,
     c_date_of_birth date not null,
-    c_certificate_number varchar(10) not null,
+    c_certificate_number varchar(50) not null,
     c_certificate_date date not null,
     c_register_office_id integer not null,
-    c_post_index varchar(10),
+    c_post_index varchar(50),
     c_street_code integer not null,
-    c_building varchar(10) not null,
-    c_extension varchar(10),
-    c_apartment varchar(10),
+    c_building varchar(50) not null,
+    c_extension varchar(50),
+    c_apartment varchar(50),
     primary key (student_child_id),
     foreign key (c_street_code) references jc_street(street_code) on delete restrict,
 	foreign key (c_register_office_id) references jc_register_office(r_office_id) on delete restrict
 
-)
+);
+
+
